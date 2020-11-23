@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  temp1: 1.5
+  temp2: 1.5
+  temp3: 1.5
+  flow_rate: 1.5
+  rail_power: 1.5
+  battery_power: 1.5
+  tx_time: 2020-11-16 10:25:23
+  cap: one
+  device: one
+
+two:
+  temp1: 1.5
+  temp2: 1.5
+  temp3: 1.5
+  flow_rate: 1.5
+  rail_power: 1.5
+  battery_power: 1.5
+  tx_time: 2020-11-16 10:25:23
+  cap: two
+  device: two

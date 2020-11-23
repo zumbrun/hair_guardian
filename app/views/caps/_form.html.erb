@@ -1,0 +1,42 @@
+<%= form_with(model: cap, local: true) do |form| %>
+  <% if cap.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(cap.errors.count, "error") %> prohibited this cap from being saved:</h2>
+
+      <ul>
+        <% cap.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :serial_number %>
+    <%= form.text_field :serial_number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :circumference %>
+    <%= form.text_field :circumference %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ear_ear_top %>
+    <%= form.text_field :ear_ear_top %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ear_ear_base %>
+    <%= form.text_field :ear_ear_base %>
+  </div>
+
+  <div class="field">
+    <%= form.label :nose_nape %>
+    <%= form.text_field :nose_nape %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

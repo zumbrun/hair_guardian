@@ -1,0 +1,38 @@
+<h1>Data</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Cap ID</th>
+      <th>Device ID</th>
+      <th>Date-Time</th>
+      <th>Temp1</th>
+      <th>Temp2</th>
+      <th>Temp3</th>
+      <th>Flow rate</th>
+      <th>Rail power</th>
+      <th>Battery power</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @data.each do |datum| %>
+      <tr>
+        <td><%= datum.cap_id %></td>
+        <td><%= datum.device_id %></td>
+        <td><%= datum.tx_time %></td>
+        <td><%= datum.temp1 %></td>
+        <td><%= datum.temp2 %></td>
+        <td><%= datum.temp3 %></td>
+        <td><%= datum.flow_rate %></td>
+        <td><%= datum.rail_power %></td>
+        <td><%= datum.battery_power %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Back', root_path %>

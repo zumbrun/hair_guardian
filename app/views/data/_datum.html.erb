@@ -1,0 +1,12 @@
+<tbody>
+  <tr>
+    <td><%= datum.device_id %></td>
+    <td><%= datum.temp1 %></td>
+    <td><%= datum.temp2 %></td>
+    <td><%= datum.temp3 %></td>
+    <td><%= datum.flow_rate %></td>
+    <td><%= datum.rail_power %></td>
+    <td><%= datum.battery_power %></td>
+    <td><%= link_to 'Destroy', [@cap, datum], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+</tbody>
