@@ -25,6 +25,9 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'mqtt', '~> 0.5.0'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
+# provides a simple API for performing paginated queries with Active Record, DataMapper and Sequel, and 
+# includes helpers for rendering pagination links in Rails, Sinatra, Hanami, and Merb web apps.
+gem 'will_paginate', '~> 3.3'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false

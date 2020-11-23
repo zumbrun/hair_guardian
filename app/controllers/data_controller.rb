@@ -4,7 +4,7 @@ class DataController < ApplicationController
   # GET /data
   # GET /data.json
   def index
-    @data = Datum.all
+    @data = Datum.all.paginate(page: params[:page], per_page: 15)
   end
 
    def create

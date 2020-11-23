@@ -4,7 +4,7 @@ class CapsController < ApplicationController
   # GET /caps
   # GET /caps.json
   def index
-    @caps = Cap.all.order(serial_number: :desc)
+    @caps = Cap.all.order(serial_number: :desc).paginate(page: params[:page], per_page: 15)
   end
 
   # GET /caps/1
