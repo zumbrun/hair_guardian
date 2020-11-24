@@ -16,14 +16,13 @@ ActiveRecord::Schema.define(version: 2020_11_17_162035) do
   enable_extension "plpgsql"
 
   create_table "accounts", force: :cascade do |t|
-    t.string "last_name"
-    t.string "first_name"
-    t.string "street_address"
-    t.string "zip_code"
-    t.string "city"
-    t.string "state"
-    t.string "payment_status"
-    t.integer "user_id", null: false
+    t.text "last_name"
+    t.text "first_name"
+    t.text "street_address"
+    t.text "city"
+    t.text "state"
+    t.text "payment_status"
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_accounts_on_user_id"
