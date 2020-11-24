@@ -39,6 +39,6 @@ class DataController < ApplicationController
     end
     # Only allow a list of trusted parameters through.
     def datum_params
-      params.require(:datum).permit(:temp1, :temp2, :temp3, :temp4, :flow_rate, :rail_power, :battery_power, :device_id)
+      params.require(:datum).permit(:phase, :temp1, :temp2, :temp3, :temp4, :flow_rate, :rail_power, :battery_power, :device_id)
     end
 end
