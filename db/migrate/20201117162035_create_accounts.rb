@@ -6,7 +6,7 @@ class CreateAccounts < ActiveRecord::Migration[6.0]
       t.text :street_address
       t.text :city
       t.text :state
-      t.text :zip_code
+      t.integer :zip_code
       t.text :payment_status
       t.references :user, null: false, foreign_key: true
 

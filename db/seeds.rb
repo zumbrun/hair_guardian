@@ -35,6 +35,7 @@ state = ["MN","WI","ND","NY","CT","GA","AL","IA","FL"]
 city = ["Rochester","Minneapolis","Atlanta","NYC","Brainard","Grand Forks","Chatano", "Houston"]
 street = ["Oak","Pine","Maple","Grove","Redwood","Fergus","Frasier","Oilword","Elder","Buckthorn","Cactus","Fern","Orange","Connen","Histan","Birch","Hickory"]
 payment_status = ["no charges", "payment made", "paid in full", "invoiced"]
+phase = ["stay cool", "cool down", "treatment", "ready for treatment"]
 
 x=10
 User.all.each do |user|
@@ -48,10 +49,10 @@ end
 
 Cap.all.each do |cap|
 	device = Device.all.sample
-	cap.data.create! temp1: rand(25.0..32.0).round(2), temp2: rand(25.0..32.0).round(2),temp3: rand(25.0..32.0).round(2), rail_power:  rand(0.0..14.0).round(2), battery_power: rand(0.0..14.0).round(2), flow_rate: rand(0.0..1.2).round(2), device_id: device.id, tx_time: Time.at(rand *Time.now.to_i)
-	cap.data.create! temp1: rand(25.0..32.0).round(2), temp2: rand(25.0..32.0).round(2),temp3: rand(25.0..32.0).round(2), rail_power:  rand(0.0..14.0).round(2), battery_power: rand(0.0..14.0).round(2), flow_rate: rand(0.0..1.2).round(2), device_id: device.id, tx_time: Time.at(rand *Time.now.to_i)
-	cap.data.create! temp1: rand(25.0..32.0).round(2), temp2: rand(25.0..32.0).round(2),temp3: rand(25.0..32.0).round(2), rail_power:  rand(0.0..14.0).round(2), battery_power: rand(0.0..14.0).round(2), flow_rate: rand(0.0..1.2).round(2), device_id: device.id, tx_time: Time.at(rand *Time.now.to_i)
-	cap.data.create! temp1: rand(25.0..32.0).round(2), temp2: rand(25.0..32.0).round(2),temp3: rand(25.0..32.0).round(2), rail_power:  rand(0.0..14.0).round(2), battery_power: rand(0.0..14.0).round(2), flow_rate: rand(0.0..1.2).round(2), device_id: device.id, tx_time: Time.at(rand *Time.now.to_i)
+	cap.data.create! phase: phase.sample, temp1: rand(25.0..32.0).round(2), temp2: rand(25.0..32.0).round(2),temp3: rand(25.0..32.0).round(2), rail_power:  rand(0.0..14.0).round(2), battery_power: rand(0.0..14.0).round(2), flow_rate: rand(0.0..1.2).round(2), device_id: device.id, tx_time: Time.at(rand *Time.now.to_i)
+	cap.data.create! phase: phase.sample, temp1: rand(25.0..32.0).round(2), temp2: rand(25.0..32.0).round(2),temp3: rand(25.0..32.0).round(2), rail_power:  rand(0.0..14.0).round(2), battery_power: rand(0.0..14.0).round(2), flow_rate: rand(0.0..1.2).round(2), device_id: device.id, tx_time: Time.at(rand *Time.now.to_i)
+	cap.data.create! phase: phase.sample, temp1: rand(25.0..32.0).round(2), temp2: rand(25.0..32.0).round(2),temp3: rand(25.0..32.0).round(2), rail_power:  rand(0.0..14.0).round(2), battery_power: rand(0.0..14.0).round(2), flow_rate: rand(0.0..1.2).round(2), device_id: device.id, tx_time: Time.at(rand *Time.now.to_i)
+	cap.data.create! phase: phase.sample, temp1: rand(25.0..32.0).round(2), temp2: rand(25.0..32.0).round(2),temp3: rand(25.0..32.0).round(2), rail_power:  rand(0.0..14.0).round(2), battery_power: rand(0.0..14.0).round(2), flow_rate: rand(0.0..1.2).round(2), device_id: device.id, tx_time: Time.at(rand *Time.now.to_i)
 end
 
 

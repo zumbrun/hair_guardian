@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2020_11_17_162035) do
     t.text "street_address"
     t.text "city"
     t.text "state"
+    t.integer "zip_code"
     t.text "payment_status"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -29,19 +30,19 @@ ActiveRecord::Schema.define(version: 2020_11_17_162035) do
   end
 
   create_table "active_storage_attachments", force: :cascade do |t|
-    t.string "name", null: false
+    t.text "name", null: false
     t.string "record_type", null: false
-    t.integer "record_id", null: false
-    t.integer "blob_id", null: false
+    t.bigint "record_id", null: false
+    t.bigint "blob_id", null: false
     t.datetime "created_at", null: false
     t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
     t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
   end
 
   create_table "active_storage_blobs", force: :cascade do |t|
-    t.string "key", null: false
-    t.string "filename", null: false
-    t.string "content_type"
+    t.text "key", null: false
+    t.text "filename", null: false
+    t.text "content_type"
     t.text "metadata"
     t.bigint "byte_size", null: false
     t.string "checksum", null: false
@@ -50,18 +51,19 @@ ActiveRecord::Schema.define(version: 2020_11_17_162035) do
   end
 
   create_table "caps", force: :cascade do |t|
-    t.string "serial_number"
+    t.text "serial_number"
     t.float "circumference"
     t.float "ear_ear_top"
     t.float "ear_ear_base"
     t.float "nose_nape"
-    t.integer "user_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_caps_on_user_id"
   end
 
   create_table "data", force: :cascade do |t|
+    t.text "phase"
     t.float "temp1"
     t.float "temp2"
     t.float "temp3"
@@ -69,8 +71,8 @@ ActiveRecord::Schema.define(version: 2020_11_17_162035) do
     t.float "rail_power"
     t.float "battery_power"
     t.datetime "tx_time"
-    t.integer "cap_id", null: false
-    t.integer "device_id", null: false
+    t.bigint "cap_id", null: false
+    t.bigint "device_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["cap_id"], name: "index_data_on_cap_id"
@@ -78,58 +80,58 @@ ActiveRecord::Schema.define(version: 2020_11_17_162035) do
   end
 
   create_table "devices", force: :cascade do |t|
-    t.string "serial_number"
+    t.text "serial_number"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "drugs", force: :cascade do |t|
-    t.string "generic_name"
-    t.string "brand_name"
-    t.string "dosage"
+    t.text "generic_name"
+    t.text "brand_name"
+    t.text "dosage"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "drugs_treatments", force: :cascade do |t|
-    t.integer "drug_id", null: false
-    t.integer "treatment_id", null: false
+    t.bigint "drug_id", null: false
+    t.bigint "treatment_id", null: false
     t.index ["drug_id"], name: "index_drugs_treatments_on_drug_id"
     t.index ["treatment_id"], name: "index_drugs_treatments_on_treatment_id"
   end
 
   create_table "profiles", force: :cascade do |t|
     t.integer "age"
-    t.string "gender"
-    t.string "race"
-    t.string "ethnicity"
-    t.string "clinic_name"
-    t.string "clinic_address"
+    t.text "gender"
+    t.text "race"
+    t.text "ethnicity"
+    t.text "clinic_name"
+    t.text "clinic_address"
     t.text "dx"
-    t.integer "user_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "stage"
+    t.text "stage"
     t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
   create_table "treatments", force: :cascade do |t|
-    t.string "regimen"
-    t.string "frequency"
+    t.text "regimen"
+    t.text "frequency"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "treatments_users", force: :cascade do |t|
-    t.integer "treatment_id", null: false
-    t.integer "user_id", null: false
+    t.bigint "treatment_id", null: false
+    t.bigint "user_id", null: false
     t.index ["treatment_id"], name: "index_treatments_users_on_treatment_id"
     t.index ["user_id"], name: "index_treatments_users_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "password_digest"
-    t.string "username"
+    t.text "password_digest"
+    t.text "username"
     t.integer "role"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
